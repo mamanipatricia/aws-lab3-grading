@@ -86,5 +86,5 @@ def test_pipeline_processes_images_and_is_idempotent() -> None:
 
 
 def build_metadata_key(source_key: str) -> str:
-    filename = Path(source_key).name
+    filename = Path(source_key).stem  # Gets filename without extension
     return f"metadata/{filename}.json"
